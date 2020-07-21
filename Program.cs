@@ -224,6 +224,76 @@ namespace ProjetoDeSoftware
                         }
                     }
                 }
+                if (escolha == "E")
+                {
+                    while (!terminarconta)
+                    {
+                        double valor;
+                        double expoente;
+                        Console.Write("Insira o valor da base: ");
+                        bool valorbool = Double.TryParse(Console.ReadLine(), out valor);
+                        Console.Write($"Insira o valor do expoente: ");
+                        bool expoentebool = Double.TryParse(Console.ReadLine(), out expoente);
+                        if (!valorbool || !expoentebool)
+                        {
+                            Console.WriteLine("Valor inválido, pressione uma tecla para inserir outro valor.");
+                            Console.ReadKey();
+                        }
+                        else
+                        {
+                            double resultado = Math.Pow(valor, expoente);
+                            Console.WriteLine($"{valor} ^ {expoente} = {resultado}");
+                            Console.WriteLine("Pressione uma tecla para voltar ao menu.");
+                            Console.ReadKey();
+                            terminarconta = true;
+                        }
+                    }
+                }
+                if (escolha == "F")
+                {
+                    while (!terminarconta)
+                    {
+                        double índice;
+                        double radicando;
+                        Console.Write("Insira o valor que será radiciado: ");
+                        bool radicandobool = Double.TryParse(Console.ReadLine(), out radicando);
+                        if (!radicandobool)
+                        {
+                            Console.WriteLine("Valor inválido, pressione uma tecla para inserir outro valor.");
+                            Console.ReadKey();
+                        }
+                        else
+                        {
+                            while (!terminaroperação)
+                            {
+                                Console.Write($"O valor {radicando} será radiciado por quanto? ");
+                                bool índicebool = Double.TryParse(Console.ReadLine(), out índice);
+                                if (!índicebool)
+                                {
+                                    Console.WriteLine("Valor inválido, pressione uma tecla para inserir outro valor.");
+                                    Console.ReadKey();
+                                }
+                                if (índice == 2)
+                                {
+                                    double resultado = Math.Sqrt(radicando);
+                                    Console.WriteLine($"Raiz quadrada de {radicando} = {resultado}");
+                                    Console.WriteLine("Pressione uma tecla para voltar ao menu.");
+                                    Console.ReadKey();
+                                    terminaroperação = true;
+                                }
+                                else
+                                {
+                                    double resultado = Math.Pow(radicando, (1 / índice));
+                                    Console.WriteLine($"{radicando} radiciado por {índice} resulta em {resultado}");
+                                    Console.WriteLine("Pressione uma tecla para voltar ao menu.");
+                                    Console.ReadKey();
+                                    terminaroperação = true;
+                                }
+                            }
+                            terminarconta = true;
+                        }
+                    }
+                }
                 if (escolha == "X")
                 {
                     terminar = true;
