@@ -10,52 +10,40 @@ namespace ProjetoDeSoftware
 
             while (!terminar)
             {
+                Console.Clear();
                 bool terminaroperação = false;
                 bool terminarconta = false;
                 Console.WriteLine(" Welcome to Henry's Calculator\n <~-~-~-~-~-~MENU~-~-~-~-~-~>\n");
                 Console.WriteLine("Escolha uma função de cálculo.\n");
-                Console.WriteLine("A.Soma\n\nB.Subtração\n\nC.Divisão\n\nD.Multiplicação\n\nE.Exponenciação\n\nF.Radiciação\n\nX.Sair do Programa");
+                Console.WriteLine("\n* Pressione Z a qualquer momento para retornar ao MENU *");
+                Console.WriteLine("A.Soma\n\nB.Subtração\n\nC.Multiplicação\n\nD.Divisão\n\nE.Exponenciação\n\nF.Radiciação\n\nX.Sair do Programa");
                 string escolha = Console.ReadLine().ToUpper();
                 if (escolha == "A")
                 {
-                    while (!terminarconta)
+                    int i = 1;
+                    decimal resultado = 0;
+                    Console.WriteLine("Pressione a tecla = para finalizar a conta.");
+                    while (!terminaroperação)
                     {
-                        double resultado = 0;
-                        int i = 1;
-                        double valores;
-                        Console.WriteLine("Quantos valores serão somados?");
-                        bool valorbool = Double.TryParse(Console.ReadLine(), out valores);
-                        if (!valorbool)
+                        decimal entradadecimal;
+                        Console.Write($"{i}º valor: ");
+                        string entrada = Console.ReadLine();
+                        if (entrada == "=" || entrada == "+")
+                        {
+                            Console.WriteLine($"Resultado = {resultado}");
+                            Console.WriteLine("Pressione uma tecla para retornar ao MENU.");
+                            Console.ReadKey();
+                            terminaroperação = true;
+                        }
+                        bool entradabool = Decimal.TryParse(entrada, out entradadecimal);
+                        if (entradabool)
+                        {
+                            resultado = resultado + entradadecimal;
+                            i++;
+                        }
+                        if (!entradabool)
                         {
                             Console.WriteLine("Valor inválido, pressione uma tecla para inserir outro valor.");
-                            Console.ReadKey();
-                        }
-                        else
-                        {
-                            while (!terminaroperação)
-                            {
-                                while (i <= valores)
-                                {
-                                    double soma;
-                                    Console.Write($"{i}º valor: ");
-                                    bool somabool = Double.TryParse(Console.ReadLine(), out soma);
-                                    if (!somabool)
-                                    {
-                                        Console.WriteLine("Valor inválido, pressione uma tecla para inserir outro valor.");
-                                        Console.ReadKey();
-                                    }
-                                    else
-                                    {
-                                        resultado = resultado + soma;
-                                        i++;
-                                    }
-                                }
-                                terminaroperação = true;
-                            }
-                            Console.WriteLine($"Resultado final = {resultado}");
-                            Console.WriteLine("Pressione uma tecla para voltar ao menu.");
-                            Console.ReadKey();
-                            terminarconta = true;
                         }
                     }
                 }
