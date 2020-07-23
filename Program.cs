@@ -36,14 +36,15 @@ namespace ProjetoDeSoftware
                             terminaroperação = true;
                         }
                         bool entradabool = Decimal.TryParse(entrada, out entradadecimal);
-                        if (entradabool)
+                        if (entradabool && entrada != "=" && entrada != "+")
                         {
                             resultado = resultado + entradadecimal;
                             i++;
                         }
-                        if (!entradabool)
+                        if (!entradabool && entrada != "=" && entrada != "+")
                         {
                             Console.WriteLine("Valor inválido, pressione uma tecla para inserir outro valor.");
+                            Console.ReadKey();
                         }
                     }
                 }
