@@ -1,4 +1,5 @@
 ﻿using System;
+using Figgle;
 
 namespace ProjetoDeSoftware
 {
@@ -14,9 +15,22 @@ namespace ProjetoDeSoftware
                 bool terminaroperação = false;
                 bool terminarconta = false;
                 Console.WriteLine(" Welcome to Henry's Calculator\n <~-~-~-~-~-~MENU~-~-~-~-~-~>\n");
+                Console.ForegroundColor = ConsoleColor.DarkBlue;
                 Console.WriteLine("Escolha uma função de cálculo.\n");
-                Console.WriteLine("\n* Pressione Z a qualquer momento para retornar ao MENU *");
-                Console.WriteLine("A.Soma\n\nB.Subtração\n\nC.Multiplicação\n\nD.Divisão\n\nE.Exponenciação\n\nF.Radiciação\n\nX.Sair do Programa");
+                Console.ForegroundColor = ConsoleColor.Blue;
+                Console.WriteLine("A.Soma");
+                Console.ForegroundColor = ConsoleColor.Cyan;
+                Console.WriteLine("B.Subtração");
+                Console.ForegroundColor = ConsoleColor.Blue;
+                Console.WriteLine("C.Multiplicação");
+                Console.ForegroundColor = ConsoleColor.Cyan;
+                Console.WriteLine("D.Divisão");
+                Console.ForegroundColor = ConsoleColor.Blue;
+                Console.WriteLine("E.Exponenciação");
+                Console.ForegroundColor = ConsoleColor.Cyan;
+                Console.WriteLine("F.Radiciação");
+                Console.ForegroundColor = ConsoleColor.Blue;
+                Console.WriteLine("X.Sair do Programa");
                 string escolha = Console.ReadLine().ToUpper();
                 if (escolha == "A")
                 {
@@ -95,117 +109,96 @@ namespace ProjetoDeSoftware
                             }
                             terminaroperação = true;
                         }
-                    }  
-                }
-                if (escolha == "C")
-                {
-                    while (!terminarconta)
-                    {
-                        double resultado = 0;
-                        int i = 2;
-                        double valores;
-                        Console.WriteLine("Quantos valores serão multiplicados?");
-                        bool valorbool = Double.TryParse(Console.ReadLine(), out valores);
-                        if (!valorbool)
+                        if (!entradabool && entrada != "=" && entrada != "+")
                         {
                             Console.WriteLine("Valor inválido, pressione uma tecla para inserir outro valor.");
                             Console.ReadKey();
                         }
-                        else
+                    }  
+                }
+                if (escolha == "C")
+                {
+                    int i = 1;
+                    decimal resultado = 1;
+                    Console.WriteLine("Pressione a tecla = para finalizar a conta.");
+                    while (!terminaroperação)
+                    {
+                        decimal entradadecimal;
+                        Console.Write($"{i}º valor: ");
+                        string entrada = Console.ReadLine();
+                        if (entrada == "=" || entrada == "+")
                         {
-                            while (!terminaroperação)
-                            {
-                                double primeirovalor;
-                                Console.Write("1º valor: ");
-                                bool primeirovalorbool = Double.TryParse(Console.ReadLine(), out primeirovalor);
-                                if (!primeirovalorbool)
-                                {
-                                    Console.WriteLine("Valor inválido, pressione uma tecla para inserir outro valor.");
-                                    Console.ReadKey();
-                                }
-                                else
-                                {
-                                    while (i <= valores)
-                                    {
-                                        double multiplicacao;
-                                        Console.Write($"{i}º valor: ");
-                                        bool multiplicacaobool = Double.TryParse(Console.ReadLine(), out multiplicacao);
-                                        if (!multiplicacaobool)
-                                        {
-                                            Console.WriteLine("Valor inválido, pressione uma tecla para inserir outro valor.");
-                                            Console.ReadKey();
-                                        }
-                                        else
-                                        {
-                                            resultado = primeirovalor * multiplicacao;
-                                            Console.WriteLine($"{primeirovalor} * {multiplicacao} = {resultado}");
-                                            primeirovalor = resultado;
-                                            i++;
-                                        }
-                                    }
-                                    Console.WriteLine("Pressione uma tecla para voltar ao menu.");
-                                    Console.ReadKey();
-                                    terminaroperação = true;
-                                    terminarconta = true;
-                                }
-                            }
+                            Console.WriteLine($"Resultado = {resultado}");
+                            Console.WriteLine("Pressione uma tecla para retornar ao MENU.");
+                            Console.ReadKey();
+                            terminaroperação = true;
+                        }
+                        bool entradabool = Decimal.TryParse(entrada, out entradadecimal);
+                        if (entradabool && entrada != "=" && entrada != "+")
+                        {
+                            resultado = resultado * entradadecimal;
+                            i++;
+                        }
+                        if (!entradabool && entrada != "=" && entrada != "+")
+                        {
+                            Console.WriteLine("Valor inválido, pressione uma tecla para inserir outro valor.");
+                            Console.ReadKey();
                         }
                     }
                 }
                 if (escolha == "D")
                 {
-                    while (!terminarconta)
+                    while (!terminaroperação)
                     {
-                        double resultado = 0;
                         int i = 2;
-                        double valores;
-                        Console.WriteLine("Quantos valores serão divididos?");
-                        bool valorbool = Double.TryParse(Console.ReadLine(), out valores);
-                        if (!valorbool)
+                        decimal entradadecimal;
+                        decimal resultado = 0;
+                        Console.WriteLine("Pressione a tecla = para finalizar a conta.");
+                        Console.Write("1º valor: ");
+                        string entrada = Console.ReadLine();
+                        if (entrada == "=" || entrada == "+")
                         {
-                            Console.WriteLine("Valor inválido, pressione uma tecla para inserir outro valor.");
+                            Console.WriteLine($"Resultado: {resultado}");
+                            Console.WriteLine("Pressione uma tecla pra retornar ao MENU.");
                             Console.ReadKey();
+                            terminaroperação = true;
                         }
-                        else
+                        bool entradabool = Decimal.TryParse(entrada, out entradadecimal);
+                        if (entradabool && entrada != "=" && entrada != "+")
                         {
-                            while (!terminaroperação)
+                            while (!terminarconta)
                             {
-                                double primeirovalor;
-                                Console.Write("1º valor: ");
-                                bool primeirovalorbool = Double.TryParse(Console.ReadLine(), out primeirovalor);
-                                if (!primeirovalorbool)
+                                decimal entrada2decimal;
+                                Console.Write($"{i}º valor: ");
+                                string entrada2 = Console.ReadLine();
+                                if (entrada2 == "=" || entrada2 == "+")
+                                {
+                                    Console.WriteLine($"Resultado: {resultado}");
+                                    Console.WriteLine("Pressione uma tecla pra retornar ao MENU.");
+                                    Console.ReadKey();
+                                    terminarconta = true;
+                                }
+                                bool entrada2bool = Decimal.TryParse(entrada2, out entrada2decimal);
+                                if (entrada2bool && entrada2 != "=" && entrada2 != "+")
+                                {
+                                    resultado = entradadecimal / entrada2decimal;
+                                    entradadecimal = resultado;
+                                    i++;
+                                }
+                                if (!entrada2bool && entrada2 != "=" && entrada2 != "+")
                                 {
                                     Console.WriteLine("Valor inválido, pressione uma tecla para inserir outro valor.");
                                     Console.ReadKey();
                                 }
-                                else
-                                {
-                                    while (i <= valores)
-                                    {
-                                        double divisao;
-                                        Console.Write($"{i}º valor: ");
-                                        bool divisaobool = Double.TryParse(Console.ReadLine(), out divisao);
-                                        if (!divisaobool)
-                                        {
-                                            Console.WriteLine("Valor inválido, pressione uma tecla para inserir outro valor.");
-                                            Console.ReadKey();
-                                        }
-                                        else
-                                        {
-                                            resultado = primeirovalor / divisao;
-                                            Console.WriteLine($"{primeirovalor} / {divisao} = {resultado}");
-                                            primeirovalor = resultado;
-                                            i++;
-                                        }
-                                    }
-                                    Console.WriteLine("Pressione uma tecla para voltar ao menu.");
-                                    Console.ReadKey();
-                                    terminaroperação = true;
-                                    terminarconta = true;
-                                }
                             }
+                            terminaroperação = true;
                         }
-                    }
+                        if (!entradabool && entrada != "=" && entrada != "+")
+                        {
+                            Console.WriteLine("Valor inválido, pressione uma tecla para inserir outro valor.");
+                            Console.ReadKey();
+                        }
+                    }  
                 }
                 if (escolha == "E")
                 {
@@ -215,19 +208,31 @@ namespace ProjetoDeSoftware
                         double expoente;
                         Console.Write("Insira o valor da base: ");
                         bool valorbool = Double.TryParse(Console.ReadLine(), out valor);
-                        Console.Write($"Insira o valor do expoente: ");
-                        bool expoentebool = Double.TryParse(Console.ReadLine(), out expoente);
-                        if (!valorbool || !expoentebool)
+                        if (!valorbool)
                         {
                             Console.WriteLine("Valor inválido, pressione uma tecla para inserir outro valor.");
                             Console.ReadKey();
                         }
-                        else
+                        if (valorbool)
                         {
-                            double resultado = Math.Pow(valor, expoente);
-                            Console.WriteLine($"{valor} ^ {expoente} = {resultado}");
-                            Console.WriteLine("Pressione uma tecla para voltar ao menu.");
-                            Console.ReadKey();
+                            while (!terminaroperação)
+                            {
+                                Console.Write($"Insira o valor do expoente: ");
+                                bool expoentebool = Double.TryParse(Console.ReadLine(), out expoente);
+                                if (!expoentebool)
+                                {
+                                    Console.WriteLine("Valor inválido, pressione uma tecla para inserir outro valor.");
+                                    Console.ReadKey();
+                                }
+                                else
+                                {
+                                    double resultado = Math.Pow(valor, expoente);
+                                    Console.WriteLine($"{valor} ^ {expoente} = {resultado}");
+                                    Console.WriteLine("Pressione uma tecla para voltar ao menu.");
+                                    Console.ReadKey();
+                                    terminaroperação = true;
+                                }
+                            }
                             terminarconta = true;
                         }
                     }
@@ -238,7 +243,7 @@ namespace ProjetoDeSoftware
                     {
                         double índice;
                         double radicando;
-                        Console.Write("Insira o valor que será radiciado: ");
+                        Console.Write("Valor radiciado: ");
                         bool radicandobool = Double.TryParse(Console.ReadLine(), out radicando);
                         if (!radicandobool)
                         {
@@ -249,25 +254,17 @@ namespace ProjetoDeSoftware
                         {
                             while (!terminaroperação)
                             {
-                                Console.Write($"O valor {radicando} será radiciado por quanto? ");
+                                Console.Write($"Valor da raiz: ");
                                 bool índicebool = Double.TryParse(Console.ReadLine(), out índice);
                                 if (!índicebool)
                                 {
                                     Console.WriteLine("Valor inválido, pressione uma tecla para inserir outro valor.");
                                     Console.ReadKey();
                                 }
-                                if (índice == 2)
-                                {
-                                    double resultado = Math.Sqrt(radicando);
-                                    Console.WriteLine($"Raiz quadrada de {radicando} = {resultado}");
-                                    Console.WriteLine("Pressione uma tecla para voltar ao menu.");
-                                    Console.ReadKey();
-                                    terminaroperação = true;
-                                }
                                 else
                                 {
                                     double resultado = Math.Pow(radicando, (1 / índice));
-                                    Console.WriteLine($"{radicando} radiciado por {índice} resulta em {resultado}");
+                                    Console.WriteLine($"Resultado: {resultado}");
                                     Console.WriteLine("Pressione uma tecla para voltar ao menu.");
                                     Console.ReadKey();
                                     terminaroperação = true;
@@ -279,6 +276,7 @@ namespace ProjetoDeSoftware
                 }
                 if (escolha == "X")
                 {
+                    Console.ResetColor();
                     terminar = true;
                 }
             }
