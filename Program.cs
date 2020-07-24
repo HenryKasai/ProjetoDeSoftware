@@ -50,58 +50,52 @@ namespace ProjetoDeSoftware
                 }
                 if (escolha == "B")
                 {
-                    while (!terminarconta)
+                    while (!terminaroperação)
                     {
-                        double resultado = 0;
                         int i = 2;
-                        double valores;
-                        Console.WriteLine("Quantos valores serão subtraídos?");
-                        bool valorbool = Double.TryParse(Console.ReadLine(), out valores);
-                        if (!valorbool)
+                        decimal entradadecimal;
+                        decimal resultado = 0;
+                        Console.WriteLine("Pressione a tecla = para finalizar a conta.");
+                        Console.Write("1º valor: ");
+                        string entrada = Console.ReadLine();
+                        if (entrada == "=" || entrada == "+")
                         {
-                            Console.WriteLine("Valor inválido, pressione uma tecla para inserir outro valor.");
+                            Console.WriteLine($"Resultado: {resultado}");
+                            Console.WriteLine("Pressione uma tecla pra retornar ao MENU.");
                             Console.ReadKey();
+                            terminaroperação = true;
                         }
-                        else
+                        bool entradabool = Decimal.TryParse(entrada, out entradadecimal);
+                        if (entradabool && entrada != "=" && entrada != "+")
                         {
-                            while (!terminaroperação)
+                            while (!terminarconta)
                             {
-                                double primeirovalor;
-                                Console.Write("1º valor: ");
-                                bool primeirovalorbool = Double.TryParse(Console.ReadLine(), out primeirovalor);
-                                if (!primeirovalorbool)
+                                decimal entrada2decimal;
+                                Console.Write($"{i}º valor: ");
+                                string entrada2 = Console.ReadLine();
+                                if (entrada2 == "=" || entrada2 == "+")
+                                {
+                                    Console.WriteLine($"Resultado: {resultado}");
+                                    Console.WriteLine("Pressione uma tecla pra retornar ao MENU.");
+                                    Console.ReadKey();
+                                    terminarconta = true;
+                                }
+                                bool entrada2bool = Decimal.TryParse(entrada2, out entrada2decimal);
+                                if (entrada2bool && entrada2 != "=" && entrada2 != "+")
+                                {
+                                    resultado = entradadecimal - entrada2decimal;
+                                    entradadecimal = resultado;
+                                    i++;
+                                }
+                                if (!entrada2bool && entrada2 != "=" && entrada2 != "+")
                                 {
                                     Console.WriteLine("Valor inválido, pressione uma tecla para inserir outro valor.");
                                     Console.ReadKey();
                                 }
-                                else
-                                {
-                                    while (i <= valores)
-                                    {
-                                        double subtração;
-                                        Console.Write($"{i}º valor: ");
-                                        bool subtraçãobool = Double.TryParse(Console.ReadLine(), out subtração);
-                                        if (!subtraçãobool)
-                                        {
-                                            Console.WriteLine("Valor inválido, pressione uma tecla para inserir outro valor.");
-                                            Console.ReadKey();
-                                        }
-                                        else
-                                        {
-                                            resultado = primeirovalor - subtração;
-                                            Console.WriteLine($"{primeirovalor} - {subtração} = {resultado}");
-                                            primeirovalor = resultado;
-                                            i++;
-                                        }
-                                    }
-                                    Console.WriteLine("Pressione uma tecla para voltar ao menu.");
-                                    Console.ReadKey();
-                                    terminaroperação = true;
-                                    terminarconta = true;
-                                }
                             }
+                            terminaroperação = true;
                         }
-                    }
+                    }  
                 }
                 if (escolha == "C")
                 {
