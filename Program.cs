@@ -15,37 +15,41 @@ namespace ProjetoDeSoftware
                 bool terminaroperação = false;
                 bool terminarconta = false;
                 Console.WriteLine(" Welcome to Henry's Calculator\n <~-~-~-~-~-~MENU~-~-~-~-~-~>\n");
-                Console.ForegroundColor = ConsoleColor.DarkBlue;
+                Console.ForegroundColor = ConsoleColor.DarkCyan;
                 Console.WriteLine("Escolha uma função de cálculo.\n");
-                Console.ForegroundColor = ConsoleColor.Blue;
-                Console.WriteLine("A.Soma");
                 Console.ForegroundColor = ConsoleColor.Cyan;
-                Console.WriteLine("B.Subtração");
-                Console.ForegroundColor = ConsoleColor.Blue;
-                Console.WriteLine("C.Multiplicação");
+                Console.WriteLine("A.Soma\n");
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.WriteLine("B.Subtração\n");
                 Console.ForegroundColor = ConsoleColor.Cyan;
-                Console.WriteLine("D.Divisão");
-                Console.ForegroundColor = ConsoleColor.Blue;
-                Console.WriteLine("E.Exponenciação");
+                Console.WriteLine("C.Multiplicação\n");
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.WriteLine("D.Divisão\n");
                 Console.ForegroundColor = ConsoleColor.Cyan;
-                Console.WriteLine("F.Radiciação");
-                Console.ForegroundColor = ConsoleColor.Blue;
+                Console.WriteLine("E.Exponenciação\n");
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.WriteLine("F.Radiciação\n");
+                Console.ForegroundColor = ConsoleColor.Cyan;
                 Console.WriteLine("X.Sair do Programa");
                 string escolha = Console.ReadLine().ToUpper();
                 if (escolha == "A")
                 {
+                    Console.ForegroundColor = ConsoleColor.Blue;
                     int i = 1;
                     decimal resultado = 0;
                     Console.WriteLine("Pressione a tecla = para finalizar a conta.");
                     while (!terminaroperação)
                     {
+                        Console.ForegroundColor = ConsoleColor.Blue;
                         decimal entradadecimal;
-                        Console.Write($"{i}º valor: ");
+                        Console.Write($"\n{i}º valor: ");
                         string entrada = Console.ReadLine();
                         if (entrada == "=" || entrada == "+")
                         {
-                            Console.WriteLine($"Resultado = {resultado}");
-                            Console.WriteLine("Pressione uma tecla para retornar ao MENU.");
+                            Console.ForegroundColor = ConsoleColor.White;
+                            Console.WriteLine($"\nResultado = {resultado}");
+                            Console.ResetColor();
+                            Console.WriteLine("\nPressione uma tecla para retornar ao MENU.");
                             Console.ReadKey();
                             terminaroperação = true;
                         }
@@ -57,7 +61,8 @@ namespace ProjetoDeSoftware
                         }
                         if (!entradabool && entrada != "=" && entrada != "+")
                         {
-                            Console.WriteLine("Valor inválido, pressione uma tecla para inserir outro valor.");
+                            Console.ForegroundColor = ConsoleColor.Red;
+                            Console.WriteLine("\nValor inválido, pressione uma tecla para inserir outro valor.");
                             Console.ReadKey();
                         }
                     }
