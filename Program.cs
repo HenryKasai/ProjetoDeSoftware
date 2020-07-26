@@ -386,6 +386,7 @@ namespace ProjetoDeSoftware
                     }
                     if (escolha2 == "B")
                     {
+                        Console.WriteLine("Escreva x na variável desejada.");
                         while (!terminaroperação)
                         {
                             Console.ForegroundColor = ConsoleColor.Cyan;
@@ -465,7 +466,7 @@ namespace ProjetoDeSoftware
                                     else
                                     {
                                         Console.ForegroundColor = ConsoleColor.White;
-                                        decimal resultado = (valor *porcentagem) / 100;
+                                        decimal resultado = (valor * porcentagem) / 100;
                                         Console.WriteLine($"\nResultado: {resultado}");
                                         Console.ResetColor();
                                         Console.WriteLine("\nPressione uma tecla para retornar ao MENU.");
