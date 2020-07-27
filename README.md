@@ -1,11 +1,11 @@
-![](Logo.PNG)
+![](logocerta.PNG)
 # ProjetoDeSoftware
 Calculadora que além de executar funções básicas de forma simples, também soluciona teoremas variados.
 
 ## Menu
 O menu interativo funciona de forma que o usuário escolhe a letra correspondente à necessidade momentânea.
 
-![](menu.PNG)
+![](menucerto.PNG)
 
 
 ## Instruções
@@ -19,6 +19,17 @@ Em relação às contas com potência e raiz, são necessários dois valores: na
 No programa também está inserido algumas possíveis formas de cálculo mais utilidades no meio acadêmico e no meio comercial, isto é, bhaskara, teorema de pitágoras e porcentagem de determinado número.
 
 ### Recomendação
+O programa é inteiramente feito em linguagem C# para console, portanto algumas recomendações para uma melhor vizualização, em questão de estética é:
+<ul>
+  Fonte em _Lucida Console_;
+  Tamanho em 20;
+  Tamanho do buffer de tela (largura: 80; altura: 300);
+  Tamanho da janela (largura: 80; altura: 28);
+  Posição da janela (esquerda: 26; superior: -1)
+  Tela de fundo.
+<ul>
+  
+  
 
 
 
