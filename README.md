@@ -3,7 +3,7 @@ Calculadora que além de executar funções básicas de forma simples, também s
 
 ## Menu
 O menu interativo funciona de forma que o usuário escolhe a letra correspondente à necessidade momentânea.
-![](file:///C:/Users/Kelly/Desktop/Logo.PNG)
+![](menu.PNG)
 
 ## Instruções
 ### Soma, subtração, multiplicação e divisão
