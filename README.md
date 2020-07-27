@@ -20,14 +20,13 @@ No programa também está inserido algumas possíveis formas de cálculo mais ut
 
 ### Recomendação
 O programa é inteiramente feito em linguagem C# para console, portanto algumas recomendações para uma melhor vizualização, em questão de estética é:
-<ul>
-  Fonte em _Lucida Console_;
-  Tamanho em 20;
-  Tamanho do buffer de tela (largura: 80; altura: 300);
-  Tamanho da janela (largura: 80; altura: 28);
-  Posição da janela (esquerda: 26; superior: -1)
-  Tela de fundo.
-<ul>
+-Fonte em _Lucida Console_;
+-Tamanho em 20;
+-Tamanho do buffer de tela (largura: 80; altura: 300);
+-Tamanho da janela (largura: 80; altura: 28);
+-Posição da janela (esquerda: 26; superior: -1)
+-Tela de fundo.
+
   
   
 
