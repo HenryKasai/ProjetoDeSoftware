@@ -18,4 +18,7 @@ Em relação às contas com potência e raiz, são necessários dois valores: na
 ### Outros
 No programa também está inserido algumas possíveis formas de cálculo mais utilidades no meio acadêmico e no meio comercial, isto é, bhaskara, teorema de pitágoras e porcentagem de determinado número.
 
+### Recomendação
+
+
 
