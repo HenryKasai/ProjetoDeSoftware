@@ -29,7 +29,7 @@ Resultado: 4000
 
 Vale ressaltar que o x pode ser posicionado em qualquer colocação, sendo cateto 1, cateto 2 ou hipotenusa.
 
-### Recomendação
+## Recomendações
 O programa é inteiramente feito em linguagem C# para console, portanto algumas recomendações para uma melhor vizualização, em questão de estética é:
 
 -Fonte em _Lucida Console_;
