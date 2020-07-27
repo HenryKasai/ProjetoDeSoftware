@@ -1,6 +1,9 @@
 # ProjetoDeSoftware
 Calculadora que além de executar funções básicas de forma simples, também soluciona teoremas variados.
 
+## Menu
+O menu interativo funciona de forma que o usuário escolhe a letra correspondente à necessidade momentânea.
+
 ## Instruções
 ### Soma, subtração, multiplicação e divisão
 Os sistemas básicos de conta ocorrem de forma que o usuário insere uma determinada quantidade de valores numéricos e após pressionar o conjunto de teclas "= + enter" recebe o resultado de se cálculo.
