@@ -17,6 +17,15 @@ Em relação às contas com potência e raiz, são necessários dois valores: na
 
 ### Outros
 No programa também está inserido algumas possíveis formas de cálculo mais utilidades no meio acadêmico e no meio comercial, isto é, bhaskara, teorema de pitágoras e porcentagem de determinado número.
+Na opção teorema de pitágoras, a lógica desenvolvida ocorre em função de ter dois valores entre cateto 1, cateto 2 e hipotenusa e uma variável, que deve ser preenchida com a letra x, da seguinte forma:
+
+Cateto 1: 3000
+
+Cateto 2: x
+
+Hipotenusa: 5000
+
+Resultado: 4000
 
 ### Recomendação
 O programa é inteiramente feito em linguagem C# para console, portanto algumas recomendações para uma melhor vizualização, em questão de estética é:
