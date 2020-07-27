@@ -47,6 +47,10 @@ O programa é inteiramente feito em linguagem C# para console, portanto algumas 
 ### Link para download
 <https://github.com/HenryKasai/ProjetoDeSoftware/tree/HenryKasai-patch-1/Algoritmus/HPD/Debug/netcoreapp3.1>
 
+## Instruções para download
+Baixe todos os arquivos no link acima e insira todos em uma pasta, após todos estarem posicionados basta abrir o arquivo ProjetoDeSoftware.exe
+
+
   
   
 
