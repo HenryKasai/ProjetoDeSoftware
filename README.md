@@ -6,4 +6,4 @@ Calculadora que além de executar funções básicas de forma simples, também s
 O sistema de soma do programa consiste em inserir uma determinada quantia de valores e utilizar o conjunto de teclas "= + enter" para vizualizar o resultado da conta.
 
 ### Subtração
-![]file:///C:/Users/Kelly/Desktop/awd.PNG
+![](file:///C:/Users/Kelly/Desktop/awd.PNG)
