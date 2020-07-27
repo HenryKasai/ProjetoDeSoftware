@@ -11,6 +11,7 @@ O menu interativo funciona de forma que o usuário escolhe a letra correspondent
 ## Instruções
 ### Soma, subtração, multiplicação e divisão
 Os sistemas básicos de conta ocorrem de forma que o usuário insere uma determinada quantidade de valores numéricos e após pressionar o conjunto de teclas "= + enter" recebe o resultado de se cálculo.
+![](Funcionamento.PNG)
 
 ### Exponenciação e Racionalização
 Em relação às contas com potência e raiz, são necessários dois valores: na exponenciação os valores são o elemento que será elevado (base) e o expoente, que elevará esse número; já na racionalização, que também necessita de dois números, é perguntado o radicando, ou seja, o número dentro da raiz e o índice, que é o elemento que decidirá se será uma raiz quadrada, cúbica, ou outra.
